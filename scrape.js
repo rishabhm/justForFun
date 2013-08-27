@@ -1,6 +1,7 @@
 /**
 	Simple script that allows you to scrape a website and download files
 	The example below looks for links to pdfs and downloads them into your local directory
+	WIP
 **/
 var scraper = require('scraper'),
 	links = [],
