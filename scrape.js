@@ -8,7 +8,7 @@ var scraper = require('scraper'),
     http = require('http'),
     fs = require('fs'),
 	link, file, request, filename;
-scraper(/* enter site url */, function (err, j) {
+scraper('http://courses.engr.illinois.edu/cs241/fa2012/', function (err, j) {
 	j('a').each(function () {
 		link = j(this).attr('href');
 		link.slice(-4) === '.pdf' ? links.push(link) : null;
