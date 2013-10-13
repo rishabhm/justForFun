@@ -1,0 +1,5 @@
+1. Practice data structures
+2. Generate all anagrams of a given word
+3. Practice sorts
+4. Find anagrams of a given word in a large array
+5. Keep track of largest element in a stack

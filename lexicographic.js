@@ -10,6 +10,8 @@
 // Solution : 2783915460
 
 var NUM = 10;
+var toFind = 1000;
+var result = [];
 var facts = [1,1,2,6,24, 120, 720, 5040, 40320, 362880, 3628800]
 
 function fact(n) {
@@ -36,12 +38,15 @@ function answer(a, b) {
 	if (b < 0)
 		return
 	if (a < fact(b)) {
-		console.log(find(0))
+		// console.log(find(0))
+		result.push(find(0))
 		answer(a, b-1)
 	} else {
-		console.log(find(parseInt(a/fact(b), 10)))
+		// console.log(find(parseInt(a/fact(b), 10)))
+		result.push(find(parseInt(a/fact(b), 10)))
 		answer(a%fact(b), b-1)
 	}
 }
 
-answer(999999, NUM-1)
+answer(toFind-1, NUM-1)
+console.log(result.join(''));
