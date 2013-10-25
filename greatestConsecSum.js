@@ -1,0 +1,3 @@
+/*
+	Find the greatest sum of consecutive integers in an array
+*/
