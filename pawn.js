@@ -10,8 +10,8 @@
 			0,3,2,4,5,6,4,5,6,4...
 		Length of cycle = 3 (4,5,6)
 
-	TODO
-		Solve with O(1) space
+	UPDATE
+		Now with O(1) space
 */
 function startCounting(A, currPos) {
     var steps=0,
@@ -19,7 +19,7 @@ function startCounting(A, currPos) {
         newPos;
     for (;;) {
         steps++;
-        newPos = A[currPos];
+        newPos = A[currPos]%A.length;
         dist += newPos - currPos;
         if (!dist) {
             return steps;
@@ -32,11 +32,11 @@ function solution(A) {
     var dict = {};
     var currPos=0, newPos=0, steps=0;
     for (;;) {
-        newPos = A[currPos];
-        if (dict[newPos]) {
+        newPos = A[currPos]%A.length;
+        if (A[newPos]>A.length) {
             return startCounting(A, newPos);
         } else {
-        	dict[newPos] = 1;
+        	A[newPos]+=A.length;
         }
         currPos = newPos;
     }

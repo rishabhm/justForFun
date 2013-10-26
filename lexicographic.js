@@ -38,11 +38,9 @@ function answer(a, b) {
 	if (b < 0)
 		return
 	if (a < fact(b)) {
-		// console.log(find(0))
 		result.push(find(0))
 		answer(a, b-1)
 	} else {
-		// console.log(find(parseInt(a/fact(b), 10)))
 		result.push(find(parseInt(a/fact(b), 10)))
 		answer(a%fact(b), b-1)
 	}
