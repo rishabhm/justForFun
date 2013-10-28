@@ -17,4 +17,4 @@ function power(a,b) {
     return result
 }
 
-power(2,100000);
+console.log(power(2,100000));
