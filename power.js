@@ -1,3 +1,5 @@
+// Calculate a^b;
+
 function power3(a,b) {
     if (b==0)
         return 1;
@@ -6,4 +8,4 @@ function power3(a,b) {
     return a * power3(a, parseInt(b/2)) * power3(a,parseInt((b-1)/2));
 }
 
-console.log(power3(-5,5));
+console.log(2,10); // We don't need to calculate this...
