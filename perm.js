@@ -1,41 +1,19 @@
-/*
-	UPDATE : Found an error, need to fix
-*/
+// Works!
 
-function permute(a) {
-	var perms = [], rec = [];
-	if (a.length > 2)
-		rec = permute(a.slice(1));
-	else {
-		return [a, a.reverse()];
-	}
-
-	rec.forEach(function (word) {
-		for(var i=0; i<word.length; i++) {
-			perms.push(word.slice(0,i).concat([a[0]]).concat(word.slice(i, word.length)));
-		}
-		perms.push(word.concat([a[0]]))
-	})
-
-	return perms;
-
+function perm(arr) {
+	if (arr.length == 0)
+		return [];
+    if (arr.length==1)
+        return [arr];
+    var perms = perm(arr.slice(1));
+    var result = []
+    for (var i=0; i <perms.length; i++) {
+        for (var j=0; j<perms[i].length; j++) {
+            result.push(perms[i].slice(0,j).concat(arr[0]).concat(perms[i].slice(j,perms[i].length)));        
+        }
+        result.push(perms[i].concat(arr[0]));
+    }
+    return result;  
 }
-
-var word = "123"
-var dict = {}
-var result = permute(word.split("")); 
-var unique = []
-
-result.forEach (function (p) {
-	if (!dict[p]) {
-		dict[p] = 1;
-		unique.push(p.join(""))
-	}
-	console.log(p)
-})
-
-unique.forEach (function (u) {
-	console.log(u);
-})
-
-console.log(result.length, unique.length);
+var permutations = perm([2,3]);
+console.log(permutations);
