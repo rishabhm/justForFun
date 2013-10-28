@@ -1,11 +1,20 @@
 // Calculate a^b;
+// Running time O(log(n))
+
+var dict = {}
 
 function power(a,b) {
+	if (dict[b])
+		return dict[b];
     if (b==0)
         return 1;
-    if (b==1)
+    if (b==1) {
+    	dict[b] = a;
         return a;
-    return a * power(a, parseInt(b/2)) * power(a,parseInt((b-1)/2));
+    }
+    var result = a * power(a, parseInt(b/2)) * power(a,parseInt((b-1)/2));
+    dict[b] = result;
+    return result
 }
 
-console.log(power(2,10)); // We don't need to calculate this...
+power(2,100000);
