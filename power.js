@@ -1,6 +1,7 @@
 // Calculate a^b;
 // Running time O(log(n))
-
+// Running time with dictionary : 45ms
+// Running time without dictionary : 307ms
 var dict = {}
 
 function power(a,b) {
@@ -17,4 +18,9 @@ function power(a,b) {
     return result
 }
 
-console.log(power(2,100000));
+var start = new Date().getMilliseconds();
+for (var i=0; i<10000; i++) {
+	dict = {};
+	power(2,1000);
+}
+var end = new Date().getMilliseconds();
