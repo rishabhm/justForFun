@@ -1,6 +1,7 @@
 /*
 	Find the greatest sum of consecutive integers in an array
 	Kadane's Algorithm
+	NOTE : This solutions assumes the empty set is NOT a valid subarray
 */
 
 function greatestConsecSum(arr) {
