@@ -1,3 +1,6 @@
+// Convert from String to Integer without using any built in functions
+// Handle invalid input
+
 function convertToInt(s) {
     var myInt = 0,
         mult = 1,
